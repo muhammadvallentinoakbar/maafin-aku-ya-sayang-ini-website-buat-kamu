@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Kenangan Kita</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        .heart-beat {
+            animation: heartbeat 1.5s ease infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .photo-item:hover {
+            transform: scale(1.03);
+            transition: transform 0.3s ease;
+        }
+        .polaroid {
+            background: white;
+            padding: 15px 15px 50px 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transform: rotate(-2deg);
+            transition: transform 0.3s;
+        }
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-pink-50 to-purple-100 min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header dengan pesan khusus -->
+        <header class="text-center mb-12 relative overflow-hidden rounded-xl bg-gradient-to-r from-pink-400 to-purple-500 p-8 text-white shadow-lg">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10">
+                <div class="absolute top-1/4 left-1/4 text-6xl text-pink-200 floating"><i class="fas fa-heart"></i></div>
+                <div class="absolute top-1/3 right-1/4 text-5xl text-purple-200 floating" style="animation-delay: 0.5s;"><i class="fas fa-heart"></i></div>
+                <div class="absolute bottom-1/4 right-1/4 text-7xl text-white floating" style="animation-delay: 1s;"><i class="fas fa-heart"></i></div>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 heart-beat">Album Kenangan Kita</h1>
+            <p class="text-xl mb-6">Untuk Pacar Tercinta yang Sedang Marahan</p>
+            
+            <div class="bg-white text-pink-600 inline-block px-6 py-3 rounded-full shadow-md hover:shadow-lg transition">
+                <i class="fas fa-heart mr-2"></i>
+                <span class="font-semibold">Aku Benar-Benar Minta Maaf</span>
+            </div>
+        </header>
+
+        <!-- Foto-foto kenangan -->
+        <section class="mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="photo-item polaroid">
+                    <img src="https://i.imghippo.com/files/EHz3828w.jpg" alt="">
+                    <p class="mt-4 text-center text-gray-700 font-medium"></p>
+                    <p class="text-center text-sm text-gray-500"></p>
+                </div>
+                
+                <div class="photo-item polaroid" style="transform: rotate(2deg);">
+                    <img src="https://i.imghippo.com/files/SNWj5477mNY.jpg" alt="" class="w-full h-64 object-cover rounded-sm">
+                    <p class="mt-4 text-center text-gray-700 font-medium"></p>
+                    <p class="text-center text-sm text-gray-500"></p>
+                </div>
+                
+                <div class="photo-item polaroid" style="transform: rotate(-1deg);">
+                    <img src="https://i.imghippo.com/files/blG5256fU.jpg" alt="" class="w-full h-64 object-cover rounded-sm">
+                    <p class="mt-4 text-center text-gray-700 font-medium"></p>
+                    <p class="text-center text-sm text-gray-500"></p>
+                </div>
+                
+                <div class="photo-item polaroid" style="transform: rotate(3deg);">
+                    <img src="https://i.imghippo.com/files/gg1394a.jpg" alt="" class="w-full h-64 object-cover rounded-sm">
+                    <p class="mt-4 text-center text-gray-700 font-medium"></p>
+                    <p class="text-center text-sm text-gray-500">Juni 2023</p>
+                </div>
+                
+                <div class="photo-item polaroid" style="transform: rotate(-3deg);">
+                    <img src="https://i.imghippo.com/files/CLBF9835z.jpg" alt="" class="w-full h-64 object-cover rounded-sm">
+                    <p class="mt-4 text-center text-gray-700 font-medium"></p>
+                    <p class="text-center text-sm text-gray-500">Desember 2023</p>
+                </div>
+                
+                <div class="photo-item polaroid" style="transform: rotate(1deg);">
+                    <div class="relative w-full h-64 bg-gradient-to-br from-pink-200 to-purple-300 flex items-center justify-center rounded-sm">
+                        <i class="fas fa-camera text-4xl text-white opacity-50"></i>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <p class="text-white font-semibold">Upload kenangan baru kita</p>
+                        </div>
+                        <input type="file" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" id="uploadPhoto">
+                    </div>
+                    <p class="mt-4 text-center text-gray-700 font-medium">Kenangan baru menunggumu</p>
+                    <p class="text-center text-sm text-gray-500">Bersama selamanya</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pesan maaf -->
+        <section class="max-w-3xl mx-auto bg-white rounded-xl p-8 shadow-md mb-12">
+            <h2 class="text-2xl font-bold text-center text-pink-600 mb-6">Untuk Kamu yang Tersayang...</h2>
+            
+            <div class="space-y-4 text-gray-700 leading-relaxed">
+                <p>Aku tahu akhir-akhir ini aku banyak salah dan mungkin membuat kamu kecewa. Melalui album ini, aku ingin mengingatkan kamu betapa berharganya setiap momen yang kita lalui bersama.</p>
+                
+                <p>Setiap foto disini adalah bukti betapa bahagianya aku bersamamu. Lihatlah senyum kita, tawa kita, dan kebahagiaan yang kita bagi. Aku tidak ingin kehilangan semua ini karena kesalahanku.</p>
+                
+                <p>Maafkan aku yang seringkali egois dan tidak peka. Aku berjanji akan berusaha lebih baik, lebih mengerti, dan lebih mencintaimu dengan sepenuh hati.</p>
+                
+                <p>Aku berharap kamu bisa memberi aku kesempatan untuk memperbaiki semua ini. Lihatlah kenangan indah kita - kita pantas untuk lebih banyak lagi momen bahagia seperti ini.</p>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <button class="bg-gradient-to-r from-pink-400 to-purple-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">
+                    <i class="fas fa-heart mr-2"></i> Aku Sayang Kamu
+                </button>
+            </div>
+        </section>
+
+        
+    </div>
+
+    <!-- Modal untuk foto yang diklik -->
+    <div id="photoModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="relative bg-white p-4 rounded-lg max-w-4xl mx-4">
+            <button id="closeModal" class="absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <img id="modalImage" src="" alt="Foto diperbesar dari kenangan" class="max-h-[80vh] max-w-full" src="">
+            <div class="mt-4">
+                <p id="modalTitle" class="text-lg font-semibold"></p>
+                <p id="modalDate" class="text-sm text-gray-500"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Penanganan klik pada foto
+        document.querySelectorAll('.photo-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (e.target.tagName === 'INPUT') return;
+                
+                const img = this.querySelector('img');
+                if (!img) return;
+                
+                document.getElementById('modalImage').src = img.src;
+                document.getElementById('modalImage').alt = img.alt;
+                document.getElementById('modalTitle').textContent = this.querySelector('p:nth-of-type(1)').textContent;
+                document.getElementById('modalDate').textContent = this.querySelector('p:nth-of-type(2)').textContent;
+                document.getElementById('photoModal').classList.remove('hidden');
+            });
+        });
+
+        // Tutup modal
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('photoModal').classList.add('hidden');
+        });
+
+        // Penanganan upload foto
+        document.getElementById('uploadPhoto').addEventListener('change', function(e) {
+            if (e.target.files.length > 0) {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                
+                reader.onload = function(event) {
+                    alert('Foto baru telah ditambahkan! Ini akan menjadi kenangan baru kita yang indah ❤️');
+                    // Di aplikasi nyata, di sini akan ada kode untuk menyimpan/menampilkan foto yang diupload
+                };
+                
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Efek hati jatuh
+        function createFallingHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '<i class="fas fa-heart"></i>';
+            heart.className = 'text-pink-400 absolute text-xl opacity-70';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '-20px';
+            heart.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Tambahkan style untuk animasi jatuh
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Buhat hati jatuh setiap 300ms
+        setInterval(createFallingHeart, 300);
+    </script>
+</body>
+</html>
+
